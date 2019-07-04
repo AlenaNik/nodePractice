@@ -1,3 +1,22 @@
+const readline = require('readline');
+const rl = readline.createInterface({
+    input : process.stdout,
+    output : process.stdout
+});
+let num1 = Math.floor((Math.random() * 10) + 1);
+let num2 = Math.floor((Math.random() * 10) + 1);
+let answer = num1 + num2;
+
+rl.question(`What is ${num1} + ${ num2 }?`,
+    (userInput) => {
+        if (userInput == answer) {
+            console.log('nice!')
+        } else {
+            console.log('wrong')
+        }
+}
+
+    );
 // const EventEmitter = require('events');
 // const eventEmitter = new EventEmitter();
 //
