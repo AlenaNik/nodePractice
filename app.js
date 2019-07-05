@@ -1,5 +1,101 @@
+const fs = require('fs');
+
+fs.readdir('example', (err, files) => {
+    err ? console.log('oops') : for(let file of files) {
+        fs.unlink('./example/' + file,(err) => {
+            err ? console.log(err) :  console.log('deleted')
+        })
+    }
+});
+// DELETE a few files from folder
 
 
+// fs.mkdir('lotsofbananas', (err) => {
+//     err ? console.log('error') : fs.writeFile('./lotsofbananas/banana1.txt', 'Hey I got bananas for you', (err) => {
+//         err ? console.log('error') : fs.writeFile('./lotsofbananas/banana2.txt', 'Another bunch of bananas', (err) => {
+//             err ? console.log('error') : console.log(`I'm done here`)
+//         });
+//     });
+// });
+//
+//  fs.unlink('./lotsofbananas/banana1.txt', (err) => {
+//      err ? console.log('error') : fs.unlink('./lotsofbananas/banana2.txt', (err) => {
+//          err ? console.log('error') : fs.rmdir('lotsofbananas', (err) => {
+//               err ? console.log('error') : console.log ('deleted stuff')
+//      })
+//   })
+// });
+
+
+//DELETE FOLDERS AND FILES
+// fs.unlink('./bananas2/bananas2.js', (err) => {
+//     err ? console.log(err) : console.log('bananas deleted');
+// });
+//
+// fs.rmdir('bananas2', (err)=> {
+//     if (err) console.log(err);
+//     else {
+//         console.log('folder deleted')
+//     }
+// })
+
+
+// MAKE FOLDER WITH FILE INSIDE
+// fs.mkdir('bananas2',(err) => {
+//     if(err)
+//         console.log(err)
+//     else {
+//         fs.writeFile('./bananas2/bananas2.js', `Bananas are friends`,(err) => {
+//             if(err)
+//                 console.log('err')
+//             else {
+//                 console.log('File inside the folder is created')
+//             }
+//         })
+//     }
+// });
+
+
+// MAKE FOLDER
+// const fs = require('fs');
+// fs.mkdir('tutorial',(err) => {
+//     if(err)
+//         console.log(err)
+//     else {
+//         console.log('folder created');
+//     }
+// });
+
+// DELETE FOLDER
+// fs.rmdir('tutorial',(err) => {
+//     if(err)
+//         console.log(err)
+//     else {
+//         console.log('folder created');
+//     }
+// });
+//
+
+
+///Working with folders
+// Working with files
+/// Deleting the file
+// const fs = require('fs');
+// fs.unlink('bananas.txt',(err) =>{
+//     if(err)
+//         console.log(err);
+//     else console.log('hopefully its deleted')
+// });
+
+
+
+/// changing content of the file
+// const fs = require('fs');
+// fs.appendFile('bananas.txt', `console.log('hola alena')`, (err) => {
+//     if(err)
+//         console.log(err);
+//     else console.log('data has changed');
+// })
 
 
 ////// changing the name of the file
