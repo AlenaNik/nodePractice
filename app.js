@@ -1,8 +1,38 @@
 
 
 
-// Exersice 2
 
+////// changing the name of the file
+// const fs = require('fs');
+// fs.rename('example.txt', 'bananas.txt', (err) => {
+//     if (err)
+//         console.log(err);
+//     else console.log('changesname')
+// });
+//
+
+// Reading and creating file
+// const fs = require('fs');
+// fs.writeFile('example.txt', "this is an exampple", (err) => {
+//     if(err)
+//         console.log(err);
+//     else {
+//         console.log('File created');
+//         fs.readFile('example.txt', 'utf8', (err, file)=> {
+//            if(err)
+//                console.log(err);
+//            else
+//                console.log(file);
+//         });
+//
+//     }
+// });
+
+
+
+
+
+/////////////////
 // const readline = require('readline');
 // const rl = readline.createInterface({
 //     input : process.stdout,
@@ -32,8 +62,8 @@
 // rl.on('close',() => {
 //     console.log('Nice one');
 // });
-
-// Exersice 1
+//
+// ///////////////////
 // const EventEmitter = require('events');
 // const eventEmitter = new EventEmitter();
 //
