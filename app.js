@@ -1,5 +1,32 @@
 
 
+// send files to server json
+// const http = require('http');
+// const fs = require('fs');
+// http.createServer((req,res) => {
+//     const readStream = fs.createReadStream('./static/example.json');
+//     res.writeHead(200,{'Content-type': 'application/json'});
+//     readStream.pipe(res);
+// }).listen('3000');
+
+
+
+// // creating a http module
+// const http = require('http');
+// const server = http.createServer((req, res)=> {
+//  if (req.url === '/') {
+//      res.write('Hello from Node');
+//      res.end();
+//  }
+//  else {
+//      res.write('using some other domain');
+//      res.end();
+//  }
+// });
+//
+// server.listen('3000');
+
+
 
 
 // Pipe & Compress & Uncompress files
