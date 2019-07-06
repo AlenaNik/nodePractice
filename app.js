@@ -1,14 +1,25 @@
-const fs = require('fs');
 
-fs.readdir('example', (err, files) => {
-    err ? console.log('oops') : for(let file of files) {
-        fs.unlink('./example/' + file,(err) => {
-            err ? console.log(err) :  console.log('deleted')
-        })
-    }
-});
+
+
+
+// Pipe & Compress & Uncompress files
+// const fs = require('fs');
+// // module for compression files
+// const zlib = require('zlib');
+// const gunzip = zlib.createGunzip();
+// const readStream = fs.createReadStream('./example2.txt.gz');
+// const writeStream = fs.createWriteStream('banana.txt');
+// readStream.pipe(gunzip).pipe(writeStream);
+
+//Create a file with chunk data in it
+// const fs = require('fs');
+//
+// const readStream = fs.createReadStream('./example.txt', 'utf8');
+// const writeStream = fs.createWriteStream('./example2.txt', 'utf8');
+// readStream.on('data',(chunk) => {
+//     writeStream.write(chunk)
+// })
 // DELETE a few files from folder
-
 
 // fs.mkdir('lotsofbananas', (err) => {
 //     err ? console.log('error') : fs.writeFile('./lotsofbananas/banana1.txt', 'Hey I got bananas for you', (err) => {
