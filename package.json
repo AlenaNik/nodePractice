@@ -7,5 +7,11 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "lodash": "^4.17.11" //major(breaking change and its not compatible).minor(new functionality).patch(bug fix)
+    // ^this means "I dont want you to make major update, but the rest of updates
+    // is ok to me. "wave" symbol means "make me only patch update
+    // If you remove every symbol iys always gonna be like that
+  }
 }
