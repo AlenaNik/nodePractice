@@ -1,7 +1,7 @@
-// POST request with Body Parser
-
+// validate input with joi
 const express = require('express');
 const path = require('path');
+const Joi = require('joi');
 const bodyParser = require('body-parser');
 const app = express();
 app.use('/public', express.static(path.join(__dirname, 'static')));
@@ -13,10 +13,42 @@ app.get('/', (req, res) => {
 });
 app.post('/', (req, res)=> {
     console.log(req.body);
+    const schema = Joi.object().keys({
+        email : Joi.string().trim().email().required(),
+        password: Joi.string().min(5).max(10).required()
+    });
+    Joi.validate(req.body,schema, (err, result)=>{
+        if(err) {
+            console.log(result)
+            res.send ('en error has occured')
+        }
+        console.log(result);
+        res.send('success');
+    })
     //database work here
     res.send('submitted');
 });
 app.listen(3000);
+
+// // POST request with Body Parser
+//
+// const express = require('express');
+// const path = require('path');
+// const bodyParser = require('body-parser');
+// const app = express();
+// app.use('/public', express.static(path.join(__dirname, 'static')));
+// //we are parsing the data and attaching it to the form body
+// app.use(bodyParser.urlencoded({extended: false}));
+//
+// app.get('/', (req, res) => {
+//     res.sendFile(path.join(__dirname, 'static', 'hello.html'));
+// });
+// app.post('/', (req, res)=> {
+//     console.log(req.body);
+//     //database work here
+//     res.send('submitted');
+// });
+// app.listen(3000);
 
 // Serving static files with Express
 //
